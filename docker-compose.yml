@@ -1,0 +1,6 @@
+services:
+  ref:
+    build: .
+    image: datastar-ref-sse-issue
+    ports:
+      - "127.0.0.1:8082:8082"

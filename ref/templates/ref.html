@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data-ref</title>
+    <script type="module" defer src="/static/datastar.js"></script>
+
+    </head>
+    <body>
+        <div data-signals="{obj: {name: ''}}">
+
+            <form id="my_form" data-ref="my_ref">
+                <fieldset>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required name="name" placeholder="name" minlength="1" data-bind="obj.name"/>
+                </fieldset>
+                <button type="button" data-on-click="my_ref.value.reportValidity() && sse('/hello', {method: 'put'})">Button</button>
+            </form>
+
+        </div>
+    </body>
+</html>
